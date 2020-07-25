@@ -11,6 +11,7 @@ class Tag extends Model
      use SoftDeletes;
 
     protected $guarded = [ 'id' ];
+    protected $with = ['tagType'];
 
     public function tagType(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
