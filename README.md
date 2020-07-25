@@ -13,6 +13,14 @@ composer require goodechilde/gc-tags
 php artisan vendor:publish --tag=gc-tags 
 ```
 
+## Usage
+It's as simple as adding the following traits to any model you want to have tags
+```bash
+    use HasTags;
+```
+
+It is recommended to create a controller for to get and set TagTypes
+
 ## Feedback
 
 Please feel free to give us feedback or any improvement suggestions.
