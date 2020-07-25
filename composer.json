@@ -1,6 +1,6 @@
 {
-    "name": "goodechilde/common-contact",
-    "description": "Our common contact fields for people and places",
+    "name": "goodechilde/gc-tags",
+    "description": "Our common tags package",
     "license": "MIT",
     "authors": [
         {
