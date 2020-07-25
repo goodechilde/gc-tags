@@ -15,6 +15,7 @@ class CreateTagTypesTable extends Migration
     {
         Schema::create('tag_types', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
             $table->string('name');
             $table->timestampsTz();
             $table->softDeletesTz();

@@ -15,9 +15,8 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('tag');
             $table->nullableMorphs('taggable');
-            $table->foreignId('tag_type_id');
+            $table->foreignId('tag_type_id')->index('tag_type_index');
             $table->timestampsTz();
             $table->softDeletesTz();
         });
