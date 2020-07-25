@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="goodechilde/common-contact">
+        <testsuite name="goodechilde/gc-tags">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

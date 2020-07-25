@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodechilde\CommonContact\Models;
+namespace Goodechilde\GcTags\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

@@ -40,8 +40,8 @@ class GcTagsServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'common-contact');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'common-contact');
+        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'gc-tags');
+        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'gc-tags');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
@@ -52,7 +52,7 @@ class GcTagsServiceProvider extends ServiceProvider
 
             // Publishing the views.
             /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/common-contact'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/gc-tags'),
             ], 'views');*/
 
             // Publishing the factories.
@@ -66,12 +66,12 @@ class GcTagsServiceProvider extends ServiceProvider
 
             // Publishing assets.
             /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/common-contact'),
+                __DIR__.'/../resources/assets' => public_path('vendor/gc-tags'),
             ], 'assets');*/
 
             // Publishing the translation files.
             /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/common-contact'),
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/gc-tags'),
             ], 'lang');*/
 
             // Registering package commands.

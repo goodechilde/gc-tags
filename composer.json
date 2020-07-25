@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Goodechilde\\CommonContact\\": "src/"
+            "Goodechilde\\GcTags\\": "src/"
         }
     },
     "autoload-dev": {
@@ -35,7 +35,7 @@
         "component": "package",
         "laravel": {
             "providers": [
-                "Goodechilde\\CommonContact\\CommonContactServiceProvider"
+                "Goodechilde\\GcTags\\GcTagsServiceProvider"
             ]
         }
     },

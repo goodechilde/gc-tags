@@ -2,7 +2,7 @@
 
 namespace Goodechilde\GcTags\Models;
 
-use Goodechilde\CommonContact\Models\TagType;
+use Goodechilde\GcTags\Models\TagType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
