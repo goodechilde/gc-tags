@@ -1,0 +1,48 @@
+{
+    "name": "goodechilde/common-contact",
+    "description": "Our common contact fields for people and places",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Goodechilde Development",
+            "email": "devs@eq8.in"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "7.*",
+        "phlak/semver": "^3.2"
+    },
+    "require-dev": {
+        "php" : ">=7.4",
+        "illuminate/support": "7.*",
+        "laravel/framework": "7.*",
+        "ambersive/keepachangelog": "dev-master",
+        "phpunit/phpunit": "^9.3@dev",
+        "orchestra/testbench": "3.8.*|4.*|5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Goodechilde\\CommonContact\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Goodechilde\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "component": "package",
+        "laravel": {
+            "providers": [
+                "Goodechilde\\CommonContact\\CommonContactServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": [
+            "@composer install",
+            "vendor/bin/phpunit"
+        ]
+    }
+}
