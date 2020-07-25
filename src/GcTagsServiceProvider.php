@@ -7,6 +7,7 @@ use Str;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
+//use Goodechilde\GcTags\SeedServiceProvider;
 
 class GcTagsServiceProvider extends ServiceProvider
 {
@@ -34,7 +35,7 @@ class GcTagsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->register(SeedServiceProvider::class);
+//        $this->app->register(SeedServiceProvider::class);
         $this->registerEloquentFactoriesFrom(__DIR__ . '/database/factories');
         /*
          * Optional methods to load your package assets
@@ -46,7 +47,7 @@ class GcTagsServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/config.php' => config_path('common-contact.php'),
+                __DIR__ . '/../config/config.php' => config_path('gc-tags.php'),
             ], 'gc-tags');
 
             // Publishing the views.
