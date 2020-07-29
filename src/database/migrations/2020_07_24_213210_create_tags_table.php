@@ -17,6 +17,8 @@ class CreateTagsTable extends Migration
             $table->id();
             $table->nullableMorphs('taggable');
             $table->foreignId('tag_type_id')->index('tag_type_index');
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestampsTz();
             $table->softDeletesTz();
         });

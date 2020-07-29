@@ -5,10 +5,12 @@ namespace Goodechilde\GcTags\Models;
 use Goodechilde\GcTags\Models\TagType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Wildside\Userstamps\Userstamps;
 
 class Tag extends Model
 {
      use SoftDeletes;
+     use Userstamps;
 
     protected $guarded = [ 'id' ];
     protected $with = ['tagType'];
