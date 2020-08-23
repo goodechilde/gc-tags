@@ -59,10 +59,19 @@ class GcTagsServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/database/factories' => database_path('factories'),
             ], 'gc-tags');
-            // Publishing the factories.
+            // Publishing the seeds.
             $this->publishes([
                 __DIR__ . '/database/seeds' => database_path('seeds'),
             ], 'gc-tags');
+
+
+            $this->publishes([
+                __DIR__ . '/OpenAPI/components' => app_path('/OpenAPI/components'),
+                __DIR__ . '/OpenAPI/parameters' => app_path('/OpenAPI/parameters'),
+                __DIR__ . '/OpenAPI/schemas' => app_path('/OpenAPI/schemas'),
+                __DIR__ . '/OpenAPI/Tag.yaml' => app_path('/OpenAPI/Tag.yaml'),
+                __DIR__ . '/OpenAPI/TagType.yaml' => app_path('/OpenAPI/TagType.yaml'),
+            ], 'gc-openapis');
 
             // Publishing assets.
             /*$this->publishes([

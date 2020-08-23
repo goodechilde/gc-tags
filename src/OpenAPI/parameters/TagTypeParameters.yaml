@@ -1,0 +1,50 @@
+TagTypeFilters:
+  in: query
+  name: filter
+  description: Filters to apply to the person
+  schema:
+    type: object
+    items:
+      enum:
+        - type
+        - name
+        - trashed
+      type: string
+    properties:
+      type:
+        type: string
+        description: The type of tag
+        example: 'phone'
+      name:
+        type: string
+        description: The name of tag
+        example: 'home'
+      trashed:
+        enum:
+          - with
+          - only
+        type: string
+        description: Include soft deleted items. 'only' to show only deleted, 'with' to include with all results.
+        example: only
+  style: deepObject
+  explode: true
+TagTypeSort:
+  in: query
+  name: sort
+  description: Sort by ASC or DESC. You can use - if you want to have the default order sorted descending
+  schema:
+    type: array
+    items:
+      enum:
+        - type
+        - name
+      type: string
+  style: form
+  explode: false
+TagPage:
+  in: query
+  name: page
+  description: Page number of data set
+  schema:
+    type: integer
+    example: 1

@@ -1,0 +1,138 @@
+Tags:
+  get:
+    summary: Tag index
+    description: Returns a list of tags
+    operationId: tagIndex
+    security:
+      - basic_auth: []
+    tags:
+      - 'Tag'
+    parameters:
+      - $ref: './parameters/TagParameters.yaml#/TagSort'
+      - $ref: './parameters/TagParameters.yaml#/TagFilters'
+      - $ref: './parameters/TagParameters.yaml#/TagPage'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Tag response object
+              required:
+                - data
+                - links
+                - meta
+              properties:
+                data:
+                  type: array
+                  description: A collection of tags
+                  items:
+                    $ref: './schemas/TagSchema.yaml#/Tag'
+                links:
+                  $ref: './schemas/TagSchema.yaml#/TagLinks'
+                meta:
+                  $ref: './schemas/TagSchema.yaml#/TagMeta'
+      '400':
+        description: Bad Request
+  post:
+    summary: Tag store
+    description: Stores a tag
+    operationId: tagStore
+    security:
+      - basic_auth: []
+    tags:
+      - 'Tag'
+    requestBody:
+      $ref: './components/TagComponent.yaml#/requestBodies/TagRequest'
+    responses:
+      '201':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: './schemas/TagSchema.yaml#/Tag'
+      '422':
+        $ref: './responses/GeneralResponses.yaml#/UnprocessableResponse'
+Tag:
+  get:
+    summary: Tag show
+    description: Returns a single tag
+    operationId: tagShow
+    security:
+      - basic_auth: []
+    tags:
+      - 'Tag'
+    parameters:
+      - name: tagId
+        in: path
+        description: Tag identifier for the url
+        required: true
+        schema:
+          type: integer
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: './schemas/TagSchema.yaml#/Tag'
+      '404':
+        $ref: './responses/GeneralResponses.yaml#/NotFoundResponse'
+      '400':
+        $ref: './responses/GeneralResponses.yaml#/BadRequestResponse'
+  put:
+    summary: Tag update
+    description: Update a tag
+    operationId: tagUpdate
+    security:
+      - basic_auth: []
+    tags:
+      - 'Tag'
+    parameters:
+      - name: tagId
+        in: path
+        description: Tag identifier for the url
+        required: true
+        schema:
+          type: integer
+    requestBody:
+      $ref: './components/TagComponent.yaml#/requestBodies/TagRequest'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: './schemas/TagSchema.yaml#/Tag'
+      '404':
+        $ref: './responses/GeneralResponses.yaml#/NotFoundResponse'
+  delete:
+    summary: Tag delete
+    description: Delete a single tag
+    operationId: tagDestroy
+    security:
+      - basic_auth: []
+    tags:
+      - 'Tag'
+    parameters:
+      - name: tagId
+        in: path
+        description: Tag identifier for the url
+        required: true
+        schema:
+          type: integer
+    responses:
+      '204':
+        description: No Content
+      '404':
+        $ref: './responses/GeneralResponses.yaml#/NotFoundResponse'

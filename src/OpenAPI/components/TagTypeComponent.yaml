@@ -1,0 +1,16 @@
+schemas:
+  $refs: '../schemas/TagTypeSchema.yaml'
+parameters:
+  $refs: '../parameters/TagTypeParameters.yaml'
+requestBodies:
+  TagTypeRequest:
+    content:
+      'application/json':
+        schema:
+          $ref: '../schemas/TagTypeSchema.yaml#/TagTypeFillableFields'
+responses:
+  $refs: './responses/GeneralResponses.yaml'
+securitySchemes:
+  basic_auth:
+    type: http
+    scheme: basic

@@ -1,0 +1,138 @@
+TagTypes:
+  get:
+    summary: TagType index
+    description: Returns a list of tagTypes
+    operationId: tagTypeIndex
+    security:
+      - basic_auth: []
+    tagTypes:
+      - 'TagType'
+    parameters:
+      - $ref: './parameters/TagTypeParameters.yaml#/TagTypeSort'
+      - $ref: './parameters/TagTypeParameters.yaml#/TagTypeFilters'
+      - $ref: './parameters/TagTypeParameters.yaml#/TagTypePage'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              description: TagType response object
+              required:
+                - data
+                - links
+                - meta
+              properties:
+                data:
+                  type: array
+                  description: A collection of tagTypes
+                  items:
+                    $ref: './schemas/TagTypeSchema.yaml#/TagType'
+                links:
+                  $ref: './schemas/TagTypeSchema.yaml#/TagTypeLinks'
+                meta:
+                  $ref: './schemas/TagTypeSchema.yaml#/TagTypeMeta'
+      '400':
+        description: Bad Request
+  post:
+    summary: TagType store
+    description: Stores a tagType
+    operationId: tagTypeStore
+    security:
+      - basic_auth: []
+    tagTypes:
+      - 'TagType'
+    requestBody:
+      $ref: './components/TagTypeComponent.yaml#/requestBodies/TagTypeRequest'
+    responses:
+      '201':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: './schemas/TagTypeSchema.yaml#/TagType'
+      '422':
+        $ref: './responses/GeneralResponses.yaml#/UnprocessableResponse'
+TagType:
+  get:
+    summary: TagType show
+    description: Returns a single tag type
+    operationId: tagTypeShow
+    security:
+      - basic_auth: []
+    tagTypes:
+      - 'TagType'
+    parameters:
+      - name: tagTypeId
+        in: path
+        description: TagType identifier for the url
+        required: true
+        schema:
+          type: integer
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: './schemas/TagTypeSchema.yaml#/TagType'
+      '404':
+        $ref: './responses/GeneralResponses.yaml#/NotFoundResponse'
+      '400':
+        $ref: './responses/GeneralResponses.yaml#/BadRequestResponse'
+  put:
+    summary: TagType update
+    description: Update a tag type
+    operationId: tagTypeUpdate
+    security:
+      - basic_auth: []
+    tagTypes:
+      - 'TagType'
+    parameters:
+      - name: tagTypeId
+        in: path
+        description: TagType identifier for the url
+        required: true
+        schema:
+          type: integer
+    requestBody:
+      $ref: './components/TagTypeComponent.yaml#/requestBodies/TagTypeRequest'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: './schemas/TagTypeSchema.yaml#/TagType'
+      '404':
+        $ref: './responses/GeneralResponses.yaml#/NotFoundResponse'
+  delete:
+    summary: TagType delete
+    description: Delete a single tag type
+    operationId: tagTypeDestroy
+    security:
+      - basic_auth: []
+    tagTypes:
+      - 'TagType'
+    parameters:
+      - name: tagTypeId
+        in: path
+        description: TagType identifier for the url
+        required: true
+        schema:
+          type: integer
+    responses:
+      '204':
+        description: No Content
+      '404':
+        $ref: './responses/GeneralResponses.yaml#/NotFoundResponse'
