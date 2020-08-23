@@ -19,10 +19,10 @@ TagFillableFields:
   required:
     - tag_type_id
   properties:
-    taggable_type:
+    taggableType:
       description: Class for the polymorhic relation
       type: string
-      example: App\USer
+      example: App\User
       default: null
       nullable: true
     taggableId:
