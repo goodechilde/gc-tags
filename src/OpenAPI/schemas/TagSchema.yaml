@@ -6,7 +6,7 @@ Tag:
         id:
           $ref: '../schemas/TagSchema.yaml#/TagId'
     - $ref: '../schemas/TagSchema.yaml#/TagFillableFields'
-    - $ref: '../schemas/TagTypeSchema.yaml#/TagTypeFillableFields'
+    - $ref: '../schemas/TagSchema.yaml#/TagTypeFields'
     - $ref: '../schemas/TagSchema.yaml#/TagAuditData'
 TagId:
   description: The unique tag identifier
@@ -37,6 +37,11 @@ TagFillableFields:
       example: 1
       default: null
       nullable: false
+TagTypeFields:
+  type: object
+  properties:
+    tagTypes:
+      $ref: '../schemas/TagTypeSchema.yaml#/TagTypeFillableFields'
 TagAuditData:
   description: Meta data about a tag
   type: object
