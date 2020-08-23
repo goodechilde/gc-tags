@@ -6,6 +6,7 @@ Tag:
         id:
           $ref: '../schemas/TagSchema.yaml#/TagId'
     - $ref: '../schemas/TagSchema.yaml#/TagFillableFields'
+    - $ref: '../schemas/TagTypeSchema.yaml#/TagTypeFillableFields'
     - $ref: '../schemas/TagSchema.yaml#/TagAuditData'
 TagId:
   description: The unique tag identifier
@@ -24,13 +25,13 @@ TagFillableFields:
       example: App\USer
       default: null
       nullable: true
-    taggable_id:
+    taggableId:
       description: Id of the relation in the class referenced in taggable_type
       type: integer
       example: 1
       default: null
       nullable: true
-    tag_type_id:
+    tagTypeId:
       description: Id of the TagType
       type: integer
       example: 1
